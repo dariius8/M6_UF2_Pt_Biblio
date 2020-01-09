@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 09-ene-2020 18:15:25 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+	<class catalog="biblio" name="biblioteca.Llibres" table="llibres">
+		<id name="idLlibre" type="int">
+			<column name="id_llibre" />
+			<generator class="assigned" />
+		</id>
+		<many-to-one class="biblioteca.Autor" fetch="select" name="autor">
+			<column name="autor" />
+		</many-to-one>
+		<property generated="never" lazy="false" name="nomLlibre"
+			type="string">
+			<column length="15" name="nom_llibre" />
+		</property>
+		<property generated="never" lazy="false" name="editoria"
+			type="string">
+			<column length="15" name="editoria" />
+		</property>
+	</class>
+</hibernate-mapping>

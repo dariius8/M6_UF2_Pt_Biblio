@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 09-ene-2020 18:15:25 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+	<class catalog="biblio" name="biblioteca.Persona" table="persona">
+		<id name="dni" type="string">
+			<column length="9" name="dni" />
+			<generator class="assigned" />
+		</id>
+		<property generated="never" lazy="false" name="nomPersona"
+			type="string">
+			<column length="15" name="nom_persona" />
+		</property>
+		<property generated="never" lazy="false" name="telefon"
+			type="java.lang.Integer">
+			<column name="telefon" />
+		</property>
+	</class>
+</hibernate-mapping>

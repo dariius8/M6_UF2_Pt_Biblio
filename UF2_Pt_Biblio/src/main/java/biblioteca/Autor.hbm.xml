@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 09-ene-2020 18:15:25 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+	<class name="biblioteca.Autor" table="autor" catalog="biblio"
+		optimistic-lock="version">
+		<id name="idAutor" type="int">
+			<column name="id_autor" />
+			<generator class="assigned" />
+		</id>
+		<property name="nomAutor" type="string">
+			<column name="nom_autor" length="15" />
+		</property>
+		<set name="llibreses" table="llibres" inverse="true" lazy="true"
+			fetch="select">
+			<key>
+				<column name="autor" />
+			</key>
+			<one-to-many class="biblioteca.Llibres" />
+		</set>
+	</class>
+</hibernate-mapping>
